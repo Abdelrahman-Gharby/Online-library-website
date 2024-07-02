@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+
+        {% load static %}
+
+      
+        <link href=" https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+       
+        <meta name="description" content="our book library">
+        <meta name="keywords" content="books , programming , short stories">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/x-icon" href="{% static 'imgs/login_icon_176905.ico' %}">
+        <title>Sign in</title>
+
+        
+    
+        
+
+        
+        
+        <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+        <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    
+
+
+
+
+     
+    </head>
+
+    <body>
+
+      
+        <nav class="nav-bar">
+            <div class="nav-left">
+                <h1><a href="{% url 'index' %}">Bibleoticha<span>.</span></a></h1>
+            </div>
+            <div class="nav-center">
+                <ul>
+                    <li class="homee"><a href="{% url 'index' %}" class="home">Home</a></li>
+                   
+                
+                </ul>
+            </div>
+            <div class="nav-right">
+               <a href="{% url 'contactus' %}"> <i class="fa-solid fa-phone"></i></a>
+            </div>
+        </nav>
+
+
+
+      
+        
+        <div class="sign-in-container">
+
+
+            <div class="form-container">
+
+                <form  method="" id="sign-in-form"  action="">
+
+
+                    {% csrf_token %}
+    
+                    <div class="form-header">
+    
+                        <h3> Sign In </h3>
+                    </div>
+    
+    
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="UserName" id="username" name="UserName" autocomplete="off">
+                        <i class="fa-solid fa-user"></i>
+
+                        <div id="error1">
+                        
+                        </div>
+                       
+                    </div>
+    
+                   
+                   <div class="input-box">
+    
+                       <input type="password" placeholder="Password" id= "password" name="password"> 
+                       <i class="fa-solid fa-lock " id="pass-lock"></i>
+
+                       
+                       <div id="error2">
+                        
+                       </div>
+                      
+                   </div>
+
+                  <div id="not-found">
+
+                  </div>
+          
+                    <div class="remember-me">
+    
+                        <input type="checkbox">
+                        <label style="display: inline;">remember me</label>
+                    </div>
+    
+
+
+                    <div class="btn-group">
+                        <button type="submit" id="sign-bt" >sign in</button>
+
+                    </div>
+                    
+
+                    <div class="sign-up-text">
+
+                        <p>Don't Have an Account?  <a href="{% url 'sign_up' %}">Sign UP</a></p>
+                      
+                    </div>
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+
+        <footer class="fs" >
+            <div class="container5">
+                <div class="about">
+                    <div class="in-about">
+                        <img src="{% static 'imgs/bookicon3jpg.jpg' %}" style="border-radius: 50%;" alt="">
+                        <h2>Bibleoticha<span>.</span></h2>
+                    </div>
+                    <p>Bibleoticha is an online library made to make you comfortable while reading books</p>
+                    <h3>Social Media</h3>
+                    <ul class="social-icons">
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-detail">
+                    <h3>Get in Touch</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ahmed Zewail Street - Giza - Egypt</span>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="">bibleoticha@gmail.com</a>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="">+01011121314</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+        <!-- <script type="text/javascript"> 
+            function preventBack() { 
+                window.history.forward();  
+            } 
+              
+            setTimeout("preventBack()", 0); 
+              
+            window.onunload = function () { null }; 
+        </script> -->
+        
+        <script src="{% static 'js/sign.js' %}"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+    <head>
+
+
+      <link href=" https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+      <meta charset="UTF-8">
+      <meta name="description" content="our book library">
+      <meta name="keywords" content="books , programming , short stories">
+      <meta name="author" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      {% load static %}
+  
+     
+      <link rel="icon" type="image/x-icon" href="{% static 'imgs\book-bookmark-icon_34486.ico' %}">
+      <title>Books List</title>
+  
+     
+      
+      <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+      <link rel="stylesheet" href="{%  static 'css/all.css' %}">
+      <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    
+
+
+
+
+    </head>
+
+
+ <body>
+
+
+
+
+
+
+
+ <nav class="nav-bar">
+    <div class="nav-left">
+        <h1><a href="{% url 'user_admin' %}">Bibleoticha<span>.</span></a></h1>
+    </div>
+    <div class="nav-center">
+        <ul>
+          <li class="homee"><a href="{% url 'user_admin' %}" class="home">Home</a></li>
+            <li><a href="{% url 'addbook' %}">Add Book</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li class="log-out">
+              <form method="post" action="/">
+                  {% csrf_token %}
+                
+                   <button type="submit"  id="log_out">log out</button>
+                  
+                  
+
+              </form>
+          </li>
+        </ul>
+    </div>
+    <div class="nav-right">
+       <a href="contact us.html"> <i class="fa-solid fa-phone"></i></a>
+    </div>
+</nav>
+
+
+
+
+
+ 
+<section class="section1">
+    <div class="container">
+        <div class="left">
+            <h2>Enjoy Reading Our
+                Amazing Books</h2>
+            <!-- <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p> -->
+            <div class="gp-btn">
+                <a href="#Gallery" class="main-btn">See Some Of Our Books </a>
+                
+            </div>
+        </div>
+
+        <div class="right">
+          <img src="{% static 'imgs/open-book-icon-free-vector.jpg' %}" alt="">
+
+        </div>
+    </div>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+<h2 class="all-header">ALL BOOKS</h2>
+
+
+
+<div class="search-bar">
+
+
+
+  <div class="search">
+    
+      <div class="options">
+    
+        <select id="select_search">
+          <option value="All">All</option>
+          <option value="title">Search by title</option>
+          <option value="book_author">Search by author</option>
+          <option value="book_category">Search by category</option>
+         
+        </select>
+
+      </div>
+    
+    
+      <div class="search-text">
+    
+        <input type="text" placeholder="search for Books..." id="search-term">
+      </div>
+    
+      <div class="search-icon">
+    
+    
+        <i class="fa-solid fa-magnifying-glass"></i>
+    
+      </div>
+
+  </div>
+
+
+</div>
+
+
+
+<div class="wrraper" id="wrraper">
+
+        
+  <div class="all-books" id="all-books">
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<h2 class="book-title">History books</h2>
+
+<main class="hsitory" id="history">
+  
+
+    <div class="slider" id="slider-history">
+
+
+    
+      {% csrf_token %}
+    
+
+
+
+
+   
+       
+
+
+
+      
+
+
+
+    
+
+
+      <div class="arrow">
+        
+        <button class="left_button" > &lt </button>
+        <button class="right_button"  > &gt </button>
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <h2 class="book-title">Romantic books</h2>
+
+
+
+
+  
+<main class="main1">
+  
+
+  <div class="slider" id="slider-romantic">
+
+   
+
+
+   
+
+    <!-- <div class="image" >
+      <img src="imgs/library books/silentpatient.png" alt="">
+    </div>
+    
+    
+    <div class="info">
+    
+      <div class="book-name"><span>Book Name:</span>${borrowed_books[i].bookname}</div>
+    
+      <div class="author">
+        <span>Book Author: ${borrowed_books[i].author} </span>.
+      </div>
+  
+      <div>
+      <span>book Category : </span>${borrowed_books[i].category}
+      </div>
+        
+      <button class="return">Return</button>
+    
+    </div>
+
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    
+
+
+
+  
+
+
+    <div class="arrow">
+      
+      <button class="left_button" > &lt </button>
+      <button class="right_button" > &gt </button>
+    </div>
+
+  </div>
+</main>
+
+
+
+<h2 class="book-title">Programming books</h2>
+
+
+<main class="main1">
+  
+
+  <div class="slider" id="slider-programming">
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+  
+
+
+    <div class="arrow">
+      
+      <button class="left_button" > &lt </button>
+      <button class="right_button"  > &gt </button>
+    </div>
+
+  </div>
+</main>
+
+
+
+
+<footer class="fs">
+  <div class="container5">
+      <div class="about">
+          <div class="in-about">
+              <img src="{% static 'imgs/bookicon3jpg.jpg' %}" style="border-radius: 50%;" alt="">
+              <h2>Bibleoticha<span>.</span></h2>
+          </div>
+          <p>Bibleoticha is an online library made to make you comfortable while reading books</p>
+          <h3>Social Media</h3>
+          <ul class="social-icons">
+              <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+          </ul>
+      </div>
+     
+      <div class="footer-detail">
+          <h3>Get in Touch</h3>
+          <ul>
+              <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Ahmed Zewail Street - Giza - Egypt</span>
+              </li>
+
+              <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <a href="">bibleoticha@gmail.com</a>
+              </li>
+
+              <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="">+01011121314</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="{% static 'js/my_slide.js' %}"></script>
+
+
+
+
+
+
+</body>   
+
+</html>
